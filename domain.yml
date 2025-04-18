@@ -1,33 +1,56 @@
 version: "3.1"
 
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+intents: #possiveis intençoes do cliente
+  - saudar
+  - pedir_pizza
+  - especificar_pizza
+  - informar_endereco
+  - confirmar_pedido
+  - cancelar_pedido
 
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+entities:
+  - sabor
+  - endereco
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+slots:
+  endereco:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: endereco
+        
+  sabor:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: sabor
+  
+responses: #possiveis respostas
+  utter_saudar:
+  - text: "Olá, como posso ajudá-lo hoje?"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_pedir_pizza:
+  - text: "Claro! que sabor de pizza você gostaria?"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_especificar_pizza:
+  - text: "Ótimo, uma pizza de {sabor}. Qual é o endereço de entrega?"
 
-  utter_goodbye:
-  - text: "Bye"
+  utter_informar_endereco:
+  - text: "Perfeito, sua pizza será entregue em {endereco}. Você gostaria de confirmar o pedido?"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_confirmar_pedido:
+  - text: "Pedido confirmado! Sua pizza chegará em breve. Alguma outra coisa?"
+
+  utter_cancelar_pedido:
+  - text: "Pedido cancelado. Se precisar de mais alguma coisa, estou à disposição!"
+
+actions: #possiveis açoes
+  - utter_saudar
+  - utter_pedir_pizza
+  - utter_especificar_pizza
+  - utter_informar_endereco
+  - utter_confirmar_pedido
+  - utter_cancelar_pedido
 
 session_config:
   session_expiration_time: 60
