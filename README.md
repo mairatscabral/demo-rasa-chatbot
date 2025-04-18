@@ -1,7 +1,7 @@
 
 # 🤖 demo-rasa-chatbot
 
-Este é um projeto de exemplo de chatbot usando o [Rasa](https://rasa.com/), criado para fins educacionais e fazer parte do curso Trilha para ELAS – Introdução à Inteligência Artificial oferecido pelo TIC em Trilhas.
+Este é um projeto de exemplo de chatbot usando o [Rasa](https://rasa.com/), criado para fins educacionais e faz parte do curso Trilha para ELAS – Introdução à Inteligência Artificial oferecido pelo TIC em Trilhas.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mairatscabral/demo-rasa-chatbot/HEAD)
 
